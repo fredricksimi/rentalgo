@@ -1,0 +1,183 @@
+{% extends 'mainapp/base.html' %}
+{% load static %}
+{% block content %}
+{% include 'mainapp/navbar.html' %}
+
+<section id="home-section" class="hero">
+	<div class="home-slider js-fullheight owl-carousel">
+		<div class="slider-item js-fullheight">
+			<div class="overlay"></div>
+			<div class="container-fluid p-0">
+				<div class="row d-md-flex no-gutters slider-text js-fullheight align-items-center justify-content-end"
+					data-scrollax-parent="true">
+					<div class="one-third order-md-last img js-fullheight"
+						style="background-image:url(../../static/img/getty.jpg);">
+					</div>
+					<div class="one-forth d-flex js-fullheight align-items-center ftco-animate"
+						data-scrollax=" properties: { translateY: '70%' }">
+						<div class="text">
+							<span class="subheading">Rentalgo Rental Shop</span>
+							<div class="horizontal">
+								<h3 class="vr" style="background-image: url(../../static/img/divider.jpg);">The Modern
+									Rentiquette</h3>
+								<h1 class="mb-4 mt-3">The Easiest Way <br><span>To Rent Anything</span></h1>
+								<p>Have unused “stuff”? Let it work for you. Snap a photo, name your price, let Rentalgo
+									do the rest.</p>
+
+								<p><a href="{% url 'mainapp:shop' %}" class="btn btn-primary px-5 py-3 mt-3">Discover
+										Now</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="slider-item js-fullheight">
+			<div class="overlay"></div>
+			<div class="container-fluid p-0">
+				<div class="row d-flex no-gutters slider-text js-fullheight align-items-center justify-content-end"
+					data-scrollax-parent="true">
+					<div class="one-third order-md-last img js-fullheight"
+						style="background-image:url(../../static/img/getty2.jpg);">
+					</div>
+					<div class="one-forth d-flex js-fullheight align-items-center ftco-animate"
+						data-scrollax=" properties: { translateY: '70%' }">
+						<div class="text">
+							<span class="subheading">Rentalgo Rental Shop</span>
+							<div class="horizontal">
+								<h3 class="vr" style="background-image: url(../../static/img/divider.jpg);">The Modern
+									Rentiquette</h3>
+								<h1 class="mb-4 mt-3">Start Earning <br><span>With Rentalgo</span></h1>
+								<p>Have unused “stuff”? Let it work for you. Snap a photo, name your price, let
+									Rentalgo do the rest.</p>
+
+								<p><a href="{% url 'mainapp:shop' %}" class="btn btn-primary px-5 py-3 mt-3">Shop
+										Now</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center"
+				style="background-image: url(../../static/img/getty.jpg);">
+			</div>
+			<div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
+				<div class="heading-section-bold mb-4 mt-md-5">
+					<div class="ml-md-0">
+						<h2 class="mb-4">Better Way to <b>RENTALGO</b> Your Products</h2>
+					</div>
+				</div>
+				<div class="pb-md-5">
+					<p>What if we told you every single item in your house could be making you money? All you have to do
+						is list your stuff with Rentalgo, tell us when it’s available, and we’ll rent it out for you.
+					</p>
+					<div class="row ftco-services">
+						<div class="col-lg-4 text-center d-flex align-self-stretch ftco-animate">
+							<div class="media block-6 services">
+								<div class="icon d-flex justify-content-center align-items-center mb-4">
+									<img src="{% static 'img/insurance.jpg' %}" class="img-fluid">
+									
+								</div>
+								<div class="media-body">
+									<h3 class="heading">ROBUST PLATFORM</h3>
+									<p>Breathe easy, rent easy. Rent any item that you feel like on Rentalgo and let it generate income for you</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 text-center d-flex align-self-stretch ftco-animate">
+							<div class="media block-6 services">
+								<div class="icon d-flex justify-content-center align-items-center mb-4">
+									<img src="{% static 'img/delivery.jpg' %}" class="img-fluid">
+									
+								</div>
+								<div class="media-body">
+									<h3 class="heading">AVAILABILITY</h3>
+									<p>Get the product you want at the time that you need it with Rentalgo.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 text-center d-flex align-self-stretch ftco-animate">
+							<div class="media block-6 services">
+								<div class="icon d-flex justify-content-center align-items-center mb-4">
+									<img src="{% static 'img/likes.jpg' %}" class="img-fluid">
+									<!-- <span class="flaticon-003-medal"></span> -->
+								</div>
+								<div class="media-body">
+									<h3 class="heading">PEER REVIEWS</h3>
+									<p>Self-policing ensures a good platformial experience in every rental transaction. </p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="ftco-section bg-light">
+	<div class="container">
+		<div class="row justify-content-center mb-3 pb-3">
+			<div class="col-md-12 heading-section text-center ftco-animate">
+				<h2 class="mb-4">Latest Entries</h2>
+				<p>Here are the items that have been recently added to the store</p>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			{% for item in items %}
+			<div class="col-sm col-md-6 col-lg ftco-animate">
+				<div class="product">
+					<a href="{{item.get_absolute_url}}" class="img-prod">
+						<center><img class="img-fluid" src="{{item.image.url}}" style="height:300px;width:auto;">
+						</center>
+
+						<div class="overlay"></div>
+					</a>
+					<div class="text py-3 px-3">
+						<h3><a href="{{item.get_absolute_url}}">{{item.name}}</a></h3>
+						<div class="d-flex">
+							<div class="pricing">
+								<p class="price"><span class="price-sale">US ${{item.price}}</span>  <b>&nbsp;per</b>
+									{% if item.rent_duration == "One Day" %} <b style="color:green;">Day</b>
+									{% elif item.rent_duration == "One Week" %} <b style="color:blue;">Week</b>
+									{% elif item.rent_duration == "One Month" %} <b style="color:red;">Month</b>
+									{% endif %}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
+
+<section class="ftco-section ftco-choose ftco-no-pb ftco-no-pt">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-5 order-md-last d-flex align-items-stretch">
+				<div class="img img-2" style="background-image: url(../../static/img/getty1.jpg);"></div>
+			</div>
+			<div class="col-md-7 py-3 py-md-5 ftco-animate">
+				<div class="text text-2 py-md-5">
+					<h2 class="mb-4">RENTALGO your stuff</h2>
+					<p>Rent your products on our platform at the comfort of your home</p>
+					{% if request.user.is_authenticated %}
+					<p><a href="{% url 'mainapp:product-create' %}" class="btn btn-white px-4 py-3">Rent something now</a></p>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{% endblock content %}

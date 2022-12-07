@@ -1,0 +1,52 @@
+{% extends 'shop/base.html' %}
+{% load static %}
+{% block title %}
+    {% if category %}{{ category.name }} {% else %} Products {% endif %}
+{% endblock %}
+
+{% block content %}
+{% include "shop/storenavbar.html" %}
+<div class="container">
+    <br><br><br>
+    <div class="row" style="margin-top: 6%">
+
+        <div class="col-sm-10 blog-main">
+
+            <div class="blog-post">
+                <div class="row">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="col-md-6 text-right">
+                                <img src="{% if product.image %} {{ product.image.url }} {% else %} {% static 'img/default.jpg' %} {% endif %}"
+                                    alt="..." style="height: 300px; width: auto">
+                            </div>
+                            <div class="col-md-6" style="padding-left: 120px">
+                                <h3 style="font-size: 40px">{{ product.name }}</h3>
+                                <h6>Category:<a href="{{ product.category.get_absolute_url }}">&nbsp;{{ product.category }}</a></h6>
+                                <p style="font-size: 30px; font-family: Arial; font-weight:bold">Kshs. {{ product.price }}</p>
+                                <br>
+                                <p><b>Description</b></p>
+                                <p>{{ product.description }}</p>
+                                <br>
+                                <p class="text-left" style="font: size 12px;font-family:Comic Sans MS">Contact owner: <a href=""><span style="font-size:12px; background: #f7f908;border-radius: 10%; padding: 2px 5px; color: black; font-family: Comic Sans MS">{{product.owner.first_name}} {{product.owner.last_name}}</span> </a></p>
+                                <br>
+                                <form action="{% url 'cart:cart_add' product.id %}" method="post">
+                                    {% csrf_token %}
+                                    
+                                    {{ cart_product_form }} 
+                                    
+                                    <input type="submit" value="add to cart" class="btn btn-primary">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div><!-- /.blog-post -->
+
+        </div><!-- /.blog-main -->
+    </div><!-- /.row -->
+
+    </div><!-- /.container -->
+{% endblock %}
