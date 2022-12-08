@@ -88,7 +88,7 @@
 					<p class="text-center">
 						<a href="{{ product.get_absolute_url }}">{{ product.name }}</a>
 					</p>
-					<p class="text-center" style="margin-top:-10px">Kshs. {{ product.price }}<br>
+					<p class="text-center" style="margin-top:-10px">US ${{ product.price }}<br>
 						<a href="{% url 'mainapp:product-edit' product.id %}"><button class="btn btn-success py-1 px-2"><i style="font-size: 10px;" class="fa fa-pen"></i>&nbsp;
 							<span style="font-size:10px;text-transform:uppercase;letter-spacing:2px;">Edit</span></button></a>
 

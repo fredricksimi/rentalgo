@@ -46,7 +46,7 @@
 						        	<h3>{{ product.name }}</h3>
 						        </td>
 
-						        <td class="price">Kshs {{item.total_price}}</td>
+						        <td class="price">US ${{item.total_price}}</td>
 
 						        <!-- <td class="quantity">
 						        	<div class="input-group mb-3">
@@ -58,7 +58,7 @@
                   <tr>
                     <td><b>Total</b></td>
                     <td colspan="2"></td>
-                    <td colspan="num"><b>Kshs. {{ cart.get_total_price }}</b></td>
+                    <td colspan="num"><b>US ${{ cart.get_total_price }}</b></td>
                 </tr>
               {% endwith %}
               {% endfor %}

@@ -34,7 +34,7 @@
 		    						<div class="d-flex">
 		    							<div class="pricing">
 				    						<p class="price">
-				    							<span class="price-sale">Kshs. {{ product.price }}</span> <b>&nbsp;per</b>{% if product.rent_duration == "One Day" %} <b style="color:green;">Day</b>
+				    							<span class="price-sale">US ${{ product.price }}</span> <b>&nbsp;per</b>{% if product.rent_duration == "One Day" %} <b style="color:green;">Day</b>
 				{% elif product.rent_duration == "One Week" %} <b style="color:blue;">Week</b>
 				{% elif product.rent_duration == "One Month" %} <b style="color:red;">Month</b>
 				{% endif %}</p>

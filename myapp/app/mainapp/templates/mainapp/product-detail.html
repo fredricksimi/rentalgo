@@ -19,7 +19,7 @@
 					<p class="text-left mr-4">Offered by {{product.owner}}</p>
 
 				</div>
-				<p class="price" style="color:black;"><span>Kshs. {{product.price}}</span> <b>&nbsp;per</b>
+				<p class="price" style="color:black;"><span>US ${{product.price}}</span> <b>&nbsp;per</b>
 					{% if product.rent_duration == "One Day" %} <b style="color:green;">Day</b>
 					{% elif product.rent_duration == "One Week" %} <b style="color:blue;">Week</b>
 					{% elif product.rent_duration == "One Month" %} <b style="color:red;">Month</b>
@@ -63,7 +63,7 @@
 						<h3><a href="{{ rela.get_absolute_url }}">{{rela.name}}</a></h3>
 						<div class="d-flex">
 							<div class="pricing">
-								<p class="price"><span class="price-sale">Kshs. {{rela.price}} </span> <b>&nbsp;per</b>
+								<p class="price"><span class="price-sale">US ${{rela.price}} </span> <b>&nbsp;per</b>
 									{% if product.rent_duration == "One Day" %} <b style="color:green;">Day</b>
 									{% elif product.rent_duration == "One Week" %} <b style="color:blue;">Week</b>
 									{% elif product.rent_duration == "One Month" %} <b style="color:red;">Month</b>
